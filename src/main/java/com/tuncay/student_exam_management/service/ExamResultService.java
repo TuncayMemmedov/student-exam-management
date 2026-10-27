@@ -58,4 +58,22 @@ public class ExamResultService {
 
         return ExamResultMapper.toResponse(result);
     }
+
+    public ExamResultResponseDto updateExamResult(Long id, ExamResultRequestDto dto){
+
+        ExamResult result = ExamResultfindById(id);
+
+        ExamResultMapper.toUpdate(result, dto);
+
+        ExamResult saved = examResultRepository.save(result);
+
+        return ExamResultMapper.toResponse(saved);
+    }
+
+    public void deleteExamResult(Long id){
+
+        ExamResult result = ExamResultfindById(id);
+
+        examResultRepository.delete(result);
+    }
 }

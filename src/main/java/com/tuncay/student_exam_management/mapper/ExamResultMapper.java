@@ -26,7 +26,7 @@ public class ExamResultMapper {
                 build();
     }
 
-    public void toUpdate(ExamResult result, ExamResultRequestDto dto){
+    public static void toUpdate(ExamResult result, ExamResultRequestDto dto){
         result.setExamDate(dto.getExamDate());
         result.setScore(dto.getScore());
         result.setSubject(dto.getSubject());
