@@ -22,7 +22,7 @@ public class ExamResultMapper {
                 subject(result.getSubject()).
                 score(result.getScore()).
                 examDate(result.getExamDate()).
-                studentId(result.getId()).
+                studentId(result.getStudent().getId()).
                 build();
     }
 
