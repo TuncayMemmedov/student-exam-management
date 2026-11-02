@@ -16,7 +16,7 @@ public class StudentController {
 
     private final StudentService studentService;
 
-    @PostMapping("/api/students")
+    @PostMapping
     public StudentResponseDto createStudent(@Valid @RequestBody StudentRequestDto dto){
         return studentService.createStudent(dto);
     }
@@ -26,8 +26,8 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-    @GetMapping
-    public StudentResponseDto getStudentById(@Valid Long id){
+    @GetMapping("/{id}")
+    public StudentResponseDto getStudentById(@PathVariable Long id){
         return studentService.getStudentById(id);
     }
 
@@ -37,7 +37,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteStudent(@Valid Long id){
+    public void deleteStudent(@PathVariable Long id){
         studentService.deleteStudent(id);
     }
 }
